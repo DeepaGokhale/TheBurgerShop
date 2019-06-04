@@ -1,0 +1,29 @@
+.burgerBd{
+    background-color: #e9d298;
+    /* margin-left: 33% */
+}
+
+.burgerImg{
+    width: 800 px;
+    height: 400 px;
+}
+
+#mainMenu{
+    color: #ffffff;
+}
+
+.burger{
+    margin-top: 30px;
+    width: 800px;
+}
+
+.burgerList{
+    margin-top: 20px;
+    width: 800px;
+    color: #58585c;
+    font-weight: bold;
+}
+
+.orderBurger{
+    padding-left: 20px;
+}
