@@ -28,11 +28,10 @@ router.get("/", function(req, res) {
 
 //usual routing etc
 router.post("/api/burgers", function(req, res){
-  burger.create("burger", req.body.burger, function (result){
-    //console.log(req.body.burger);
-    //res.json({id: result.inserted});
+    burger.create("burger", req.body.name, function (result){
+    // console.log(req.body.name);
+    res.redirect("/");
   });
 })
-
 
 module.exports = router;

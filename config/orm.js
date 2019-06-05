@@ -49,28 +49,45 @@ var orm = {
       queryString += " (";
       queryString += cols.toString();
       queryString += ") ";
-      queryString += "VALUES (";
+      queryString += "VALUES ('";
       queryString += vals;
-      queryString += ") ";
+      queryString += "') ";
   
       console.log(queryString);
   
       connection.query(queryString, vals, function(err, result) {
         if (err) {
-          cb(res.json(500, err));
+         throw err;
         }
         console.log(queryString);
         cb(result);
       });
     },
-    createnew: function(vals, cb)
-    {
-      //var qry = "Insert into burgers (name) values (?)", vals;
-      connection.query("Insert into burgers (burger) values (" + vals + ")", function(err, data){
-        if(err) console.log("Insert into burgers (burger) values  " + vals + " "  + err);
-        cb(data);
+    // An example of objColVals would be {name: panther, sleepy: true}
+    update: function(table, objColVals, condition, cb) {
+      var queryString = "UPDATE " + table;
+
+      queryString += " SET ";
+      queryString += objToSql(objColVals);
+      queryString += " WHERE ";
+      queryString += condition;
+
+      console.log(queryString);
+      connection.query(queryString, function(err, result) {
+        if (err) {
+          throw err;
+        }
+        cb(result);
       });
     }
+    // createnew: function(vals, cb)
+    // {
+    //   //var qry = "Insert into burgers (name) values (?)", vals;
+    //   connection.query("Insert into burgers (burger) values (" + vals + ")", function(err, data){
+    //     if(err) console.log("Insert into burgers (burger) values  " + vals + " "  + err);
+    //     cb(data);
+    //   });
+    // }
 }
 
 module.exports = orm;
