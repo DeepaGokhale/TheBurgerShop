@@ -14,8 +14,8 @@
                 
                 </form>
                 <div class="row">
-                    <div class="col col-lg-8">
-                        <ul class = "burgerList order" id="curOrder">
+                    <div class="col col-lg-8" id="curOrderHeader">
+                        <ul class = "burgerList current" id="curOrder">
                             {{!-- Only when users enter the new burger --}}
                         </ul>
                     </div>
@@ -24,11 +24,11 @@
                         <h3 class="burgerList">Past Orders:</h3>
                         <ul class="burgerList order" id="pastOrder">
                             {{#each burgers}}
-                            <li class="burgerList">
-                                <h4>
+                            <h4><li class="burgerList">
+                                {{!-- <h4> --}}
                                 {{burger}}
-                                </h4>
-                            </li>
+                                {{!-- </h4> --}}
+                            </li></h4>
                             {{/each}}
                         </ul>
                     </div>

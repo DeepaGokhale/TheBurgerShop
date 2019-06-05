@@ -24,6 +24,13 @@
     font-weight: bold;
 }
 
+.listHeading{
+    margin-top: 20px;
+    width: 500px;
+    color: #58585c;
+    font-weight: bold;
+}
+
 .orderBurger{
     padding-left: 20px;
 }
@@ -31,7 +38,7 @@
 span.order{
     display: inline-block;
     padding: 5px;
-    width: 300px;
+    width: 550px;
     height: 40px;
 }
 
@@ -39,11 +46,19 @@ span.order{
     margin-left: 10px;
 }
 
-/* .order{
-    list-style:none;
-    padding:0;
-    margin:0;
-    white-space:nowrap;
-    max-height: 200px;
-    overflow-y:scroll;
-} */
+
+.orderScr{
+    height: 250px;
+    overflow: scroll;
+}
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+
+.orderNew{
+    margin-top: 10px;
+    width: 200px;
+    color: #58585c;
+    /* font-weight: bold; */
+}
